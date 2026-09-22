@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1429972601100933317}
   - component: {fileID: 1180477741491739670}
   - component: {fileID: 1086224082848929179}
+  - component: {fileID: 4897793623301225867}
   - component: {fileID: 4855983931833819582}
   - component: {fileID: 5339722848016021481}
   - component: {fileID: 5238868417798290583}
@@ -130,7 +131,7 @@ NavMeshAgent:
   m_Acceleration: 15
   avoidancePriority: 50
   m_AngularSpeed: 120
-  m_StoppingDistance: 1.75
+  m_StoppingDistance: 1.5
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
@@ -138,6 +139,18 @@ NavMeshAgent:
   m_BaseOffset: 0.5
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &4897793623301225867
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2419699889168745352}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d529d5607120ea47873b3716ce9c59e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FOVScript
 --- !u!114 &4855983931833819582
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -152,6 +165,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::WalkManScript
   target: {fileID: 0}
   zombie: {fileID: 5313303325662088008, guid: 748ab89a44a54d64d85a7a06f420dd27, type: 3}
+  moveUpdateDelay: 0.1
 --- !u!136 &5339722848016021481
 CapsuleCollider:
   m_ObjectHideFlags: 0

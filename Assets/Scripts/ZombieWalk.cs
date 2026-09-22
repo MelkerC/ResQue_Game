@@ -5,7 +5,7 @@ using UnityEngine.AI;
 
 public class ZombieWalk : MonoBehaviour
 {
-
+    [SerializeField] private float updateSpeed;
     private NavMeshAgent agent;
 
     private GameObject target;
@@ -15,7 +15,6 @@ public class ZombieWalk : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
 
         StartCoroutine(GetNewTarget());
-        //target = GameObject.FindAnyObjectByType<WalkManScript>().gameObject;
     }
 
     private void Update()
@@ -28,8 +27,8 @@ public class ZombieWalk : MonoBehaviour
 
     private IEnumerator GetNewTarget()
     {
-        yield return new WaitForSeconds(1f);
-        target = GetComponent<FOVScript>().target.gameObject;
+        yield return new WaitForSeconds(updateSpeed);
+        target = GetComponent<FOVScript>().FindClosest("Citizen");
     }
 
     private void OnTriggerEnter(Collider other)

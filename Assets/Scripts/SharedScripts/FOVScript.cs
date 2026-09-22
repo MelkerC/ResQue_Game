@@ -2,35 +2,29 @@ using UnityEngine;
 
 public class FOVScript : MonoBehaviour
 {
-    [SerializeField] public float searchRadius = 10f;
-
-    [SerializeField] private LayerMask searchMask;
-
-    public Transform target;
-
-    void Update()
+    public GameObject FindClosest(string tag)
     {
-        Collider[] hits = Physics.OverlapSphere(transform.position, searchRadius, searchMask);
-
-        print("Number of hits: " + hits.Length);
-
-        Collider closest = null;
-        float closestDistance = Mathf.Infinity;
-
-        foreach (Collider c in hits)
+        GameObject[] gos;
+        gos = GameObject.FindGameObjectsWithTag(tag);
+        GameObject closest = null;
+        float distance = Mathf.Infinity;
+        Vector3 position = transform.position;
+        foreach (GameObject go in gos)
         {
-            float dist = Vector3.Distance(transform.position, c.transform.position);
-
-            if (dist < closestDistance)
+            Vector3 diff = go.transform.position - position;
+            float curDistance = diff.sqrMagnitude;
+            if (curDistance < distance)
             {
-                closestDistance = dist;
-                closest = c;
+                closest = go;
+                distance = curDistance;
             }
         }
 
-        if (closest != null)
+        if(closest != null)
         {
-            target = closest.transform;
+            return closest;
         }
+
+        return FindClosest(tag);
     }
 }
