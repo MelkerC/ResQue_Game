@@ -62,24 +62,8 @@ public class HandleCitizen : MonoBehaviour
         }
     }
 
-    public void UpdateFollowers(GameObject dead)
-    {
-        bool stopFollow = false;
+    public void RemoveMe(GameObject leaver) { followers.Remove(leaver);
 
-        foreach(GameObject g in followers)
-        {
-            if (!stopFollow)
-            {
-                if (g == dead)
-                {
-                    stopFollow = true;
-                }
-            }
-            else
-            {
-                g.GetComponent<WalkManScript>().FollowPlayer(null);
-                followers.Remove(g);
-            }
-        }
+        print(followers.Count);
     }
 }

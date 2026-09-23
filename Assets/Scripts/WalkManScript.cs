@@ -13,26 +13,30 @@ public class WalkManScript : MonoBehaviour
 
     private Vector3 destination;
 
+    private HandleCitizen handleCitizen;
+
     private bool followingPlayer = false;
 
     private void Start()
     {
         agent = GetComponent<NavMeshAgent>();
-        StartCoroutine(FindPath());
+        handleCitizen = FindAnyObjectByType<HandleCitizen>();
+        //StartCoroutine(FindPath());
     }
 
     private IEnumerator FindPath()
     {
-        UpdatePath();
+        //UpdatePath();
         yield return new WaitForSeconds(moveUpdateDelay);
         StartCoroutine(FindPath());
     }
 
-    private void UpdatePath()
+    private void Update()
     {
         if (followingPlayer)
         {
-            destination = target.transform.position;
+            if(target == null){followingPlayer = false;handleCitizen.RemoveMe(gameObject); }
+            else{destination = target.transform.position;}
         }
         else
         {
@@ -48,19 +52,18 @@ public class WalkManScript : MonoBehaviour
         target = follow;
     }
 
-    public void StopFollowPlayer()
-    {
-        followingPlayer = false;
-    }
+    public void StopFollowPlayer(){followingPlayer = false;}
 
-    public bool IsFollowingPlayer()
-    {
-        return followingPlayer;
-    }
+    public bool IsFollowingPlayer(){return followingPlayer;}
 
     public void Die()
     {
-        Instantiate(zombie, transform.position, Quaternion.identity);
-        Destroy(gameObject);
+        //Instantiate(zombie, transform.position, Quaternion.identity);
+        handleCitizen.RemoveMe(gameObject);
+
+        Invoke("DestroyObject", 0.1f);
     }
+
+
+    private void DestroyObject(){Destroy(gameObject);}
 }
