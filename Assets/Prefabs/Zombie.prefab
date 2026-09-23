@@ -149,7 +149,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a5c24d0b98bb73438b5a44f0b24336f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ZombieWalk
+  zombie: {fileID: 5313303325662088008}
   updateSpeed: 0.5
+  speed: 2
 --- !u!136 &7337140422704558690
 CapsuleCollider:
   m_ObjectHideFlags: 0

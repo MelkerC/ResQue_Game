@@ -10,7 +10,6 @@ public class HandleCitizen : MonoBehaviour
 
     private void Update()
     {
-
         if (Keyboard.current.eKey.wasPressedThisFrame)
         {
             List<GameObject> temp = new List<GameObject>(nerbyCitizens);
@@ -20,12 +19,10 @@ public class HandleCitizen : MonoBehaviour
                 if (followers.Count == 0)
                 {
                     go.GetComponent<WalkManScript>().FollowPlayer(gameObject);
-                    print("Single");
                 }
                 else
                 {
                     go.GetComponent<WalkManScript>().FollowPlayer(followers[followers.Count - 1]);
-                    print("Multible");
                 }
                 followers.Add(go);
                 nerbyCitizens.Remove(go);
@@ -37,7 +34,6 @@ public class HandleCitizen : MonoBehaviour
     {
         if (IsCitizenFollowing(citizen) && !nerbyCitizens.Contains(citizen.gameObject))
         {
-            print("Entred");
             nerbyCitizens.Add(citizen.gameObject);
         }
     }
@@ -62,8 +58,5 @@ public class HandleCitizen : MonoBehaviour
         }
     }
 
-    public void RemoveMe(GameObject leaver) { followers.Remove(leaver);
-
-        print(followers.Count);
-    }
+    public void RemoveMe(GameObject leaver) {followers.Remove(leaver);}
 }
