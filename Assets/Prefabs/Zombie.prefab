@@ -151,7 +151,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ZombieWalk
   zombie: {fileID: 5313303325662088008}
   updateSpeed: 0.5
-  speed: 2
+  speed: 1.3
 --- !u!136 &7337140422704558690
 CapsuleCollider:
   m_ObjectHideFlags: 0
