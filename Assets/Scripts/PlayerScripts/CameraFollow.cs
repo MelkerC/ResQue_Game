@@ -8,6 +8,7 @@ public class CameraFollow : MonoBehaviour
     [SerializeField] private Vector3 velocity = Vector3.zero;
     [SerializeField] private int zoomCalibration;
     [SerializeField] private float zoomPerCitizen;
+    [SerializeField] private float zoomSpeed;
 
 
     private float currentCitizens;
@@ -32,7 +33,7 @@ public class CameraFollow : MonoBehaviour
 
             if(currentCitizens != cameraInstance.orthographicSize)
             {
-                cameraInstance.orthographicSize = LerpBetween(cameraInstance.orthographicSize, currentCitizens, 0.1f);
+                cameraInstance.orthographicSize = LerpBetween(cameraInstance.orthographicSize, currentCitizens, zoomSpeed);
             }
         }
 
@@ -41,7 +42,7 @@ public class CameraFollow : MonoBehaviour
 
     private float LerpBetween(float a, float b, float speed)
     {
-        speed = Mathf.Clamp(0,1,speed);
+        speed = Mathf.Clamp(speed,0,1);
         float result = a * (1-speed) + b * speed;
         return result;
     }
