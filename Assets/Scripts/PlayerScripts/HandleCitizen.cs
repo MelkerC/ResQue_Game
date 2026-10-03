@@ -58,5 +58,7 @@ public class HandleCitizen : MonoBehaviour
         }
     }
 
+    public int FollowerCount(){return followers.Count;}
+
     public void RemoveMe(GameObject leaver) {followers.Remove(leaver);}
 }

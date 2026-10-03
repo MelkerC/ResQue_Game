@@ -529,8 +529,8 @@ MonoBehaviour:
   offset: {x: 0, y: 8, z: -6}
   smoothSpeed: 0.125
   velocity: {x: 0, y: 0, z: 0}
-  zoomCalibration: 6
-  zoomPerCitizen: 0.4
+  zoomCalibration: 4
+  zoomPerCitizen: 0
 --- !u!1 &410087039
 GameObject:
   m_ObjectHideFlags: 0
