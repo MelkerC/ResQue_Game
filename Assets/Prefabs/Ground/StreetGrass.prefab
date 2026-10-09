@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6723974396248546802}
   - component: {fileID: 3021721358317798649}
   - component: {fileID: 1398717963554273729}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: StreetGrass
   m_TagString: Untagged
   m_Icon: {fileID: 0}

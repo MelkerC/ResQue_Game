@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 7660534122636492672}
   - component: {fileID: 329161732385227011}
   - component: {fileID: 1429972601100933317}
-  - component: {fileID: 1180477741491739670}
   - component: {fileID: 1086224082848929179}
   - component: {fileID: 4897793623301225867}
   - component: {fileID: 4855983931833819582}
@@ -98,27 +97,6 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &1180477741491739670
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2419699889168745352}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 0.001
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!195 &1086224082848929179
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -128,12 +106,12 @@ NavMeshAgent:
   m_GameObject: {fileID: 2419699889168745352}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.23
-  m_Speed: 3
-  m_Acceleration: 15
-  avoidancePriority: 50
-  m_AngularSpeed: 300
-  m_StoppingDistance: 1.75
+  m_Radius: 0.5
+  m_Speed: 5
+  m_Acceleration: 10
+  avoidancePriority: 99
+  m_AngularSpeed: 180
+  m_StoppingDistance: 2
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
@@ -167,7 +145,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::WalkManScript
   target: {fileID: 0}
   zombie: {fileID: 5313303325662088008, guid: 748ab89a44a54d64d85a7a06f420dd27, type: 3}
-  moveUpdateDelay: 0.005
+  minSpeed: 3
+  maxSpeed: 5
+  movementVariation: 0
+  minVariation: 5
+  maxVariation: 20
+  updateDelay: 0
+  minUpdateDelay: 0.01
+  maxUpdateDelay: 0.05
 --- !u!136 &5339722848016021481
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -214,7 +199,7 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -225,7 +210,7 @@ CapsuleCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2419699889168745352}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 6ebd9b620204c1a4cb300683f2c54e38, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -238,9 +223,9 @@ CapsuleCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5
-  m_Height: 3.277638
+  m_Height: 3.5119634
   m_Direction: 1
-  m_Center: {x: 0, y: 0.6388191, z: 0}
+  m_Center: {x: 0, y: 0.5216563, z: 0}
 --- !u!1001 &6121010287346911376
 PrefabInstance:
   m_ObjectHideFlags: 0

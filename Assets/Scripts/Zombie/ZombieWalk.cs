@@ -6,7 +6,7 @@ using UnityEngine.AI;
 public class ZombieWalk : MonoBehaviour
 {
     [SerializeField] private GameObject zombie;
-    [SerializeField] private float updateSpeed, speed;
+    [SerializeField] private float updateSpeed, minSpeed, maxSpeed;
 
     private NavMeshAgent agent;
 
@@ -16,7 +16,9 @@ public class ZombieWalk : MonoBehaviour
 
     private void Start()
     {
-        agent = GetComponent<NavMeshAgent>(); agent.speed = speed; canKill = true;
+        agent = GetComponent<NavMeshAgent>(); 
+        agent.speed = Random.Range(minSpeed, maxSpeed); 
+        canKill = true;
 
         StartCoroutine(GetNewTarget());
     }
@@ -51,7 +53,7 @@ public class ZombieWalk : MonoBehaviour
         Vector3 citizenPosition = citizen.transform.position;
         citizen.GetComponent<WalkManScript>().Die();
         yield return new WaitForSeconds(1);
-        canKill = true; agent.speed = speed;
+        canKill = true; agent.speed = Random.Range(minSpeed, maxSpeed);
         Instantiate(zombie, citizenPosition, Quaternion.identity);
     }
 }

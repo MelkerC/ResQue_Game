@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4554369130564944452}
   - component: {fileID: 5032288788989226731}
   - component: {fileID: 6322888614745343776}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: StreetPath
   m_TagString: Untagged
   m_Icon: {fileID: 0}

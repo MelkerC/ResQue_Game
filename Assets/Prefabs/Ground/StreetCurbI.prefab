@@ -80,6 +80,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: StreetCurbI
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 7d9c33faf2abc5a4aa97fdcabb4f5be9, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

@@ -76,6 +76,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pine3
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 578298aad6cd15246be0b0e903fb835d, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -83,6 +87,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 578298aad6cd15246be0b0e903fb835d, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1108550202992430672}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 578298aad6cd15246be0b0e903fb835d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1160745212396171119}
   m_SourcePrefab: {fileID: 100100000, guid: 578298aad6cd15246be0b0e903fb835d, type: 3}
 --- !u!1 &5735681960388511213 stripped
 GameObject:
@@ -112,3 +119,23 @@ CapsuleCollider:
   m_Height: 4.044916
   m_Direction: 1
   m_Center: {x: -0.024843335, y: 1.9600487, z: -0.08110213}
+--- !u!114 &1160745212396171119
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5735681960388511213}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.AI.Navigation::Unity.AI.Navigation.NavMeshModifier
+  m_SerializedVersion: 0
+  m_OverrideArea: 1
+  m_Area: 1
+  m_OverrideGenerateLinks: 0
+  m_GenerateLinks: 0
+  m_IgnoreFromBuild: 0
+  m_ApplyToChildren: 0
+  m_AffectedAgents: ffffffff

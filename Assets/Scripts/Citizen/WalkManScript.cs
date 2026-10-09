@@ -7,7 +7,9 @@ public class WalkManScript : MonoBehaviour
     [SerializeField] private GameObject target;
     [SerializeField] private GameObject zombie;
 
-    [SerializeField] private float moveUpdateDelay;
+    [SerializeField] private float minSpeed, maxSpeed;
+    [SerializeField] private float movementVariation, minVariation, maxVariation;
+    [SerializeField] private float updateDelay, minUpdateDelay, maxUpdateDelay;
 
     private NavMeshAgent agent;
 
@@ -21,6 +23,12 @@ public class WalkManScript : MonoBehaviour
     {
         agent = GetComponent<NavMeshAgent>();
         handleCitizen = FindAnyObjectByType<HandleCitizen>();
+
+        agent.speed = Random.Range(minSpeed, maxSpeed);
+        movementVariation = Random.Range(minVariation, maxVariation);
+        updateDelay = Random.Range(minUpdateDelay, maxUpdateDelay);
+
+        StartCoroutine(ChooseTarget());
     }
 
     private void Update()
@@ -30,12 +38,20 @@ public class WalkManScript : MonoBehaviour
             if(StayOrGo()){followingPlayer = false;handleCitizen.RemoveMe(gameObject); }
             else{destination = target.transform.position;}
         }
-        else
-        {
-            target = GetComponent<FOVScript>().FindClosest("Zombie");
-            destination = new Vector3((transform.position.x - target.transform.position.x) * 3, transform.position.y, (transform.position.z - target.transform.position.z) * 3);
-        }
         agent.SetDestination(destination);
+    }
+
+    private IEnumerator ChooseTarget()
+    {
+        while (true)
+        {
+            if (!followingPlayer)
+            {
+                target = GetComponent<FOVScript>().FindClosest("Zombie");
+                destination = new Vector3((transform.position.x - target.transform.position.x) * movementVariation, transform.position.y, (transform.position.z - target.transform.position.z) * movementVariation);
+            }
+            yield return new WaitForSeconds(updateDelay);
+        }
     }
 
     public void FollowPlayer(GameObject follow)
