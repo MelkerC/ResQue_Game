@@ -75,7 +75,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: 0936900054462ff498a0dda32d618eb0, type: 3}
       propertyPath: 'm_Materials.Array.data[2]'
       value: 
-      objectReference: {fileID: 2100000, guid: 46d99886d7c286b4194c9896cfafa6a0, type: 2}
+      objectReference: {fileID: 2100000, guid: 00e382a13aba98341a8fc7517e569033, type: 2}
     - target: {fileID: 919132149155446097, guid: 0936900054462ff498a0dda32d618eb0, type: 3}
       propertyPath: m_Name
       value: SpeedSign
