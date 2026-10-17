@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 1053621268616737123}
   serializedVersion: 2
   m_LocalRotation: {x: 0.0000002877967, y: -0.7071067, z: 0.000000049378038, w: 0.70710695}
-  m_LocalPosition: {x: 0.112, y: 1.974, z: -0.001}
+  m_LocalPosition: {x: 0.121, y: 1.97, z: 0.001}
   m_LocalScale: {x: 0.49999988, y: 0.5, z: 0.49999988}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -56,7 +56,7 @@ MonoBehaviour:
     m_Bits: 1
   m_ScaleMode: 0
   m_Offset: {x: 0, y: 0, z: 0.035}
-  m_Size: {x: 1, y: 1, z: 0.07}
+  m_Size: {x: 1.1, y: 1.1, z: 0.07}
   m_FadeFactor: 1
   m_VisibleInScene: 1
   version: 1
@@ -83,7 +83,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 51751dc2b2d915247a49ef988c6d4ad2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.4964728
+      value: 2.52
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 51751dc2b2d915247a49ef988c6d4ad2, type: 3}
       propertyPath: m_LocalPosition.y
@@ -128,7 +128,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: 51751dc2b2d915247a49ef988c6d4ad2, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: 8d37354584b070941b0116a91e10c2a3, type: 2}
+      objectReference: {fileID: 2100000, guid: cb22c505dc1714d498f1000e0b39215a, type: 2}
     - target: {fileID: -7511558181221131132, guid: 51751dc2b2d915247a49ef988c6d4ad2, type: 3}
       propertyPath: 'm_Materials.Array.data[1]'
       value: 
@@ -141,16 +141,48 @@ PrefabInstance:
       propertyPath: m_Name
       value: CrossRoadSign
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 51751dc2b2d915247a49ef988c6d4ad2, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 51751dc2b2d915247a49ef988c6d4ad2, type: 3}
       insertIndex: -1
       addedObject: {fileID: 8483537575310890866}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 51751dc2b2d915247a49ef988c6d4ad2, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8963460465907230674}
   m_SourcePrefab: {fileID: 100100000, guid: 51751dc2b2d915247a49ef988c6d4ad2, type: 3}
 --- !u!4 &1445628912151143603 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 51751dc2b2d915247a49ef988c6d4ad2, type: 3}
   m_PrefabInstance: {fileID: 1406634548891009880}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2252986712923700745 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 51751dc2b2d915247a49ef988c6d4ad2, type: 3}
+  m_PrefabInstance: {fileID: 1406634548891009880}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &8963460465907230674
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2252986712923700745}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.AI.Navigation::Unity.AI.Navigation.NavMeshModifier
+  m_SerializedVersion: 0
+  m_OverrideArea: 1
+  m_Area: 1
+  m_OverrideGenerateLinks: 0
+  m_GenerateLinks: 0
+  m_IgnoreFromBuild: 0
+  m_ApplyToChildren: 0
+  m_AffectedAgents: ffffffff
