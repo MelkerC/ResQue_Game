@@ -60,5 +60,7 @@ public class HandleCitizen : MonoBehaviour
 
     public int FollowerCount(){return followers.Count;}
 
+    public bool HasFollowers() { return followers.Count > 0;}
+
     public void RemoveMe(GameObject leaver) {followers.Remove(leaver);}
 }

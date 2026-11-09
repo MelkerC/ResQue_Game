@@ -3,6 +3,7 @@ using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
+    [SerializeField] private Transform relative;
 
     [SerializeField] private float speed;
 
@@ -40,6 +41,6 @@ public class PlayerMovement : MonoBehaviour
             transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(movement), 0.1f);
         }
 
-        transform.Translate(movement, Space.World);
+        transform.Translate(movement, relative);
     }
 }
