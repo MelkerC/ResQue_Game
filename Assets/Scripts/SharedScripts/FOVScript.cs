@@ -5,7 +5,7 @@ public class FOVScript : MonoBehaviour
     public GameObject FindClosest(string tag)
     {
         GameObject[] gos;
-        gos = GameObject.FindGameObjectsWithTag(tag);
+        gos = GameObject.FindGameObjectsWithTag(tag); //Denna måste fixas, den ger stack overflow om alla citizenbs är döda.
         GameObject closest = null;
         float distance = Mathf.Infinity;
         Vector3 position = transform.position;

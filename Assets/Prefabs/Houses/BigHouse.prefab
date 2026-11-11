@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7137099577650501795}
   - component: {fileID: 8711987103963944845}
   - component: {fileID: 7499485886423166159}
-  m_Layer: 7
+  m_Layer: 11
   m_Name: NavMeshNotWakable
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -146,7 +146,7 @@ GameObject:
   - component: {fileID: 1204263486830878607}
   - component: {fileID: 2607270626954481728}
   - component: {fileID: 7152106984249390056}
-  m_Layer: 7
+  m_Layer: 11
   m_Name: NavMeshNotWakable (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -279,7 +279,7 @@ GameObject:
   - component: {fileID: 521408400500012095}
   - component: {fileID: 4467047265547369167}
   - component: {fileID: 8493181806313341330}
-  m_Layer: 7
+  m_Layer: 11
   m_Name: NavMeshNotWakable (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -470,6 +470,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 3e78939f998e7f54099f2ff39ea7b4d4, type: 3}
       propertyPath: m_Name
       value: BigHouse
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 3e78939f998e7f54099f2ff39ea7b4d4, type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

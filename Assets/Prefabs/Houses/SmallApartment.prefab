@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2093671038886000141}
   - component: {fileID: 3403245477096810086}
   - component: {fileID: 2096510729673400854}
-  m_Layer: 7
+  m_Layer: 11
   m_Name: NavMeshNotWakable
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -220,6 +220,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: b864a345cc442f64a94aba6b63994f8e, type: 3}
       propertyPath: m_Name
       value: SmallApartment
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b864a345cc442f64a94aba6b63994f8e, type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
