@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2093671038886000141}
   - component: {fileID: 3403245477096810086}
   - component: {fileID: 2096510729673400854}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: NavMeshNotWakable
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29,8 +29,8 @@ Transform:
   m_GameObject: {fileID: 8748447580523973729}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0.70710677, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0.1, y: 0.08300048, z: 0.01}
-  m_LocalScale: {x: 3.8532667, y: 0.15090667, z: 2.16788}
+  m_LocalPosition: {x: 0.1, y: 0.08300048, z: -0}
+  m_LocalScale: {x: 3.8903751, y: 0.15090667, z: 2.19758}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8182582136529145227}
@@ -68,7 +68,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 0094f85304ce5834d921e1b9880837fd, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -223,7 +223,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: b864a345cc442f64a94aba6b63994f8e, type: 3}
       propertyPath: m_Layer
-      value: 11
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
