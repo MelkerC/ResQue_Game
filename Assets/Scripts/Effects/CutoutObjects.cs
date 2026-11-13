@@ -32,6 +32,8 @@ public class CutoutObjects : MonoBehaviour
 
         List<Renderer> renderers = new List<Renderer>();
 
+
+
         if (Physics.Raycast(transform.position, offset.normalized, out hit, offset.magnitude, wallMask))
         {
             renderers = new List<Renderer>(hit.transform.GetComponentsInChildren<Renderer>());
@@ -48,28 +50,34 @@ public class CutoutObjects : MonoBehaviour
                     mat.SetFloat("_FalloffSize", LerpBetween(mat.GetFloat("_FalloffSize"), falloffSize, lerpSpeed));
                 }
             }
+            Dissapear(renderers);
         }
         else
         {
-            foreach (Renderer rend in savedRenderers)
-            {
+            Dissapear(renderers);
+        }
+    }
 
-                if (!(renderers.Contains(rend)))
+    void Dissapear(List<Renderer> renderers)
+    {
+        foreach (Renderer rend in savedRenderers)
+        {
+            if (!(renderers.Contains(rend)))
+            {
+                foreach (Material mat in rend.materials)
                 {
-                    foreach (Material mat in rend.materials)
+                    mat.SetFloat("_CutoutSize", LerpBetween(mat.GetFloat("_CutoutSize"), 0, lerpSpeed));
+                    mat.SetFloat("_FalloffSize", LerpBetween(mat.GetFloat("_FalloffSize"), 0, lerpSpeed));
+                    if (mat.GetFloat("_CutoutSize") <= 0.01f && mat.GetFloat("_FalloffSize") <= 0.01f)
                     {
-                        mat.SetFloat("_CutoutSize", LerpBetween(mat.GetFloat("_CutoutSize"), 0, lerpSpeed));
-                        mat.SetFloat("_FalloffSize", LerpBetween(mat.GetFloat("_FalloffSize"), 0, lerpSpeed));
-                        if (mat.GetFloat("_CutoutSize") <= 0.01f && mat.GetFloat("_FalloffSize") <= 0.01f)
-                        {
-                            activeMaterials.Remove(mat);
-                            savedRenderers.Remove(rend);
-                        }
+                        activeMaterials.Remove(mat);
+                        savedRenderers.Remove(rend);
                     }
                 }
             }
         }
     }
+
     private float LerpBetween(float a, float b, float speed)
     {
         speed = Mathf.Clamp(speed, 0, 1);

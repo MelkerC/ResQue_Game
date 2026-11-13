@@ -11478,7 +11478,7 @@ MonoBehaviour:
   targetObject: {fileID: 921134862}
   wallMask:
     serializedVersion: 2
-    m_Bits: 4096
+    m_Bits: 53248
   seeThroughMaterials:
   - {fileID: 2100000, guid: 4165cf31d27b3ce43a23f7cf6cead1d5, type: 2}
   - {fileID: 2100000, guid: febb41351c44a1946b27f4c0de5d8085, type: 2}
@@ -21959,6 +21959,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 641071632}
+  - component: {fileID: 641071634}
+  - component: {fileID: 641071633}
   m_Layer: 12
   m_Name: HouseGroup7
   m_TagString: Untagged
@@ -21984,6 +21986,48 @@ Transform:
   - {fileID: 1348556038}
   m_Father: {fileID: 1913580604}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &641071633
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 641071631}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 3.6, y: 14.39, z: 6.38}
+  m_Center: {x: -21, y: 6.34, z: -0.26}
+--- !u!65 &641071634
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 641071631}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 6.4, y: 10.12, z: 9.2}
+  m_Center: {x: -16.36, y: 4.24, z: 1.7}
 --- !u!1001 &646353237
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -28000,6 +28044,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 792421165}
+  - component: {fileID: 792421166}
   m_Layer: 12
   m_Name: HouseGroup11
   m_TagString: Untagged
@@ -28025,6 +28070,27 @@ Transform:
   - {fileID: 1213956252}
   m_Father: {fileID: 1913580604}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &792421166
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 792421164}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 6, y: 13.19, z: 10.5}
+  m_Center: {x: -16.73, y: 6.83, z: 23.52}
 --- !u!1 &792656057
 GameObject:
   m_ObjectHideFlags: 0
@@ -37486,6 +37552,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1067617912}
+  - component: {fileID: 1067617913}
   m_Layer: 12
   m_Name: HouseGroup13
   m_TagString: Untagged
@@ -37509,6 +37576,27 @@ Transform:
   - {fileID: 980553189}
   m_Father: {fileID: 1913580604}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1067617913
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1067617911}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 6.93, y: 13.76, z: 5.81}
+  m_Center: {x: 5.69, y: 3.83, z: 27.62}
 --- !u!1001 &1071156053
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -40035,7 +40123,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1142640858}
-  m_Layer: 12
+  - component: {fileID: 1142640859}
+  - component: {fileID: 1142640860}
+  m_Layer: 15
   m_Name: HouseGroup10
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40059,6 +40149,48 @@ Transform:
   - {fileID: 1686674013}
   m_Father: {fileID: 1913580604}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1142640859
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1142640857}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 3.84, y: 22.54, z: 6.49}
+  m_Center: {x: -0.07, y: 2.23, z: 4.18}
+--- !u!65 &1142640860
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1142640857}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 3.84, y: 19.87, z: 6.49}
+  m_Center: {x: 3.2, y: -0.82, z: 4.18}
 --- !u!1001 &1143939893
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -46138,6 +46270,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1340376560}
+  - component: {fileID: 1340376561}
   m_Layer: 12
   m_Name: HouseGroup14
   m_TagString: Untagged
@@ -46161,6 +46294,27 @@ Transform:
   - {fileID: 1495340320}
   m_Father: {fileID: 1913580604}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1340376561
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1340376559}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 6.93, y: 9.4, z: 5.81}
+  m_Center: {x: 17.78, y: 3.7, z: 27.62}
 --- !u!1001 &1344886557
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -46984,6 +47138,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1386079304}
+  - component: {fileID: 1386079305}
   m_Layer: 12
   m_Name: HouseGroup12
   m_TagString: Untagged
@@ -47007,6 +47162,27 @@ Transform:
   - {fileID: 266950691}
   m_Father: {fileID: 1913580604}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1386079305
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1386079303}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 3.3, y: 8.98, z: 6.4}
+  m_Center: {x: -14.94, y: 4.69, z: 34.5}
 --- !u!1 &1390662012
 GameObject:
   m_ObjectHideFlags: 0
@@ -64403,7 +64579,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1877061404}
-  m_Layer: 12
+  - component: {fileID: 1877061405}
+  - component: {fileID: 1877061406}
+  m_Layer: 14
   m_Name: HouseGroup9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -64427,6 +64605,48 @@ Transform:
   - {fileID: 94464236}
   m_Father: {fileID: 1913580604}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1877061405
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1877061403}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 3.94, y: 22.54, z: 6.49}
+  m_Center: {x: 3.27, y: 2.23, z: -3.54}
+--- !u!65 &1877061406
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1877061403}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 3.94, y: 21.04, z: 6.49}
+  m_Center: {x: -0.02, y: -1.2, z: -3.54}
 --- !u!1001 &1877446865
 PrefabInstance:
   m_ObjectHideFlags: 0
