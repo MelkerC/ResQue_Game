@@ -11,8 +11,6 @@ public class CutoutObjects : MonoBehaviour
 
     [SerializeField] private LayerMask wallMask;
 
-    [SerializeField] private Material[] seeThroughMaterials;
-
     private List<Renderer> savedRenderers = new List<Renderer>();
 
     private List<Material> activeMaterials = new List<Material>();
@@ -23,52 +21,42 @@ public class CutoutObjects : MonoBehaviour
 
         List<Renderer> renderers = new List<Renderer>();
 
-        RaycastHit[] hits1 = Physics.RaycastAll(transform.position, offset.normalized, offset.magnitude, wallMask);
-
-
         if (Physics.RaycastAll(transform.position, offset.normalized, offset.magnitude, wallMask) is RaycastHit[] hits)
         {
             foreach (RaycastHit hit in hits)
             {
-                foreach(Renderer r in hit.transform.GetComponentsInChildren<Renderer>())
-                {
-                    renderers.Add(r);
-                }
+                foreach(Renderer r in hit.transform.GetComponentsInChildren<Renderer>()){renderers.Add(r);}
 
-                foreach (Renderer rend in renderers)
-                {
-                    foreach (Material mat in rend.materials)
-                    {
-                        if (!activeMaterials.Contains(mat)) { activeMaterials.Add(mat); }
-                        if (!savedRenderers.Contains(rend)) { savedRenderers.Add(rend); }
-
-                        mat.SetFloat("_CutoutSize", LerpBetween(mat.GetFloat("_CutoutSize"), cutoutSize, lerpSpeed));
-                        mat.SetFloat("_FalloffSize", LerpBetween(mat.GetFloat("_FalloffSize"), falloffSize, lerpSpeed));
-                    }
-                }
-
+                foreach (Renderer rend in renderers){GoThroughRend(rend, false, cutoutSize, falloffSize);}
             }
-
             Dissapear(renderers);
         }
+    }
 
-        void Dissapear(List<Renderer> renderers)
+    void Dissapear(List<Renderer> renderers)
+    {
+        foreach (Renderer rend in savedRenderers){if (!(renderers.Contains(rend))){GoThroughRend(rend, true, 0, 0);}}
+    }
+
+    private void GoThroughRend(Renderer rend, bool disappear, float cutoutSizeApply, float falloffSizeApply)
+    {
+        foreach (Material mat in rend.materials)
         {
-            foreach (Renderer rend in savedRenderers)
+            mat.SetFloat("_CutoutSize", LerpBetween(mat.GetFloat("_CutoutSize"), cutoutSizeApply, lerpSpeed));
+            mat.SetFloat("_FalloffSize", LerpBetween(mat.GetFloat("_FalloffSize"), falloffSizeApply, lerpSpeed));
+
+            if (disappear)
             {
-                if (!(renderers.Contains(rend)))
+                if (mat.GetFloat("_CutoutSize") <= 0.0f && mat.GetFloat("_FalloffSize") <= 0.0f)
                 {
-                    foreach (Material mat in rend.materials)
-                    {
-                        mat.SetFloat("_CutoutSize", LerpBetween(mat.GetFloat("_CutoutSize"), 0, lerpSpeed));
-                        mat.SetFloat("_FalloffSize", LerpBetween(mat.GetFloat("_FalloffSize"), 0, lerpSpeed));
-                        if (mat.GetFloat("_CutoutSize") <= 0.0f && mat.GetFloat("_FalloffSize") <= 0.0f)
-                        {
-                            activeMaterials.Remove(mat);
-                            savedRenderers.Remove(rend);
-                        }
-                    }
+                    activeMaterials.Remove(mat);
+                    savedRenderers.Remove(rend);
                 }
+            }
+            else
+            {
+                if (!activeMaterials.Contains(mat)) { activeMaterials.Add(mat); }
+                if (!savedRenderers.Contains(rend)) { savedRenderers.Add(rend); }
             }
         }
     }
