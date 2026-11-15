@@ -11472,7 +11472,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32a351111c195b14cb70d07bbeff1e21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CutoutObjects
-  cutoutSize: 0.57
+  cutoutSize: 0.45
   falloffSize: 0.34
   lerpSpeed: 0.1
   targetObject: {fileID: 921134862}

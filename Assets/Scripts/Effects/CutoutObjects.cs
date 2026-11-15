@@ -13,18 +13,9 @@ public class CutoutObjects : MonoBehaviour
 
     [SerializeField] private Material[] seeThroughMaterials;
 
-    private Camera mainCamera;
-
-    private RaycastHit hit;
-
     private List<Renderer> savedRenderers = new List<Renderer>();
 
     private List<Material> activeMaterials = new List<Material>();
-
-    private void Awake()
-    {
-        mainCamera = GetComponent<Camera>();
-    }
 
     private void Update()
     {
@@ -32,46 +23,50 @@ public class CutoutObjects : MonoBehaviour
 
         List<Renderer> renderers = new List<Renderer>();
 
+        RaycastHit[] hits1 = Physics.RaycastAll(transform.position, offset.normalized, offset.magnitude, wallMask);
 
 
-        if (Physics.Raycast(transform.position, offset.normalized, out hit, offset.magnitude, wallMask))
+        if (Physics.RaycastAll(transform.position, offset.normalized, offset.magnitude, wallMask) is RaycastHit[] hits)
         {
-            renderers = new List<Renderer>(hit.transform.GetComponentsInChildren<Renderer>());
-            Debug.Log("Hit: " + hit.transform.name + " with " + renderers.Count + " renderers.");
-
-            foreach (Renderer rend in renderers)
+            foreach (RaycastHit hit in hits)
             {
-                foreach (Material mat in rend.materials)
+                foreach(Renderer r in hit.transform.GetComponentsInChildren<Renderer>())
                 {
-                    if (!activeMaterials.Contains(mat)) { activeMaterials.Add(mat); }
-                    if (!savedRenderers.Contains(rend)) { savedRenderers.Add(rend); }
-
-                    mat.SetFloat("_CutoutSize", LerpBetween(mat.GetFloat("_CutoutSize"), cutoutSize, lerpSpeed));
-                    mat.SetFloat("_FalloffSize", LerpBetween(mat.GetFloat("_FalloffSize"), falloffSize, lerpSpeed));
+                    renderers.Add(r);
                 }
-            }
-            Dissapear(renderers);
-        }
-        else
-        {
-            Dissapear(renderers);
-        }
-    }
 
-    void Dissapear(List<Renderer> renderers)
-    {
-        foreach (Renderer rend in savedRenderers)
-        {
-            if (!(renderers.Contains(rend)))
-            {
-                foreach (Material mat in rend.materials)
+                foreach (Renderer rend in renderers)
                 {
-                    mat.SetFloat("_CutoutSize", LerpBetween(mat.GetFloat("_CutoutSize"), 0, lerpSpeed));
-                    mat.SetFloat("_FalloffSize", LerpBetween(mat.GetFloat("_FalloffSize"), 0, lerpSpeed));
-                    if (mat.GetFloat("_CutoutSize") <= 0.01f && mat.GetFloat("_FalloffSize") <= 0.01f)
+                    foreach (Material mat in rend.materials)
                     {
-                        activeMaterials.Remove(mat);
-                        savedRenderers.Remove(rend);
+                        if (!activeMaterials.Contains(mat)) { activeMaterials.Add(mat); }
+                        if (!savedRenderers.Contains(rend)) { savedRenderers.Add(rend); }
+
+                        mat.SetFloat("_CutoutSize", LerpBetween(mat.GetFloat("_CutoutSize"), cutoutSize, lerpSpeed));
+                        mat.SetFloat("_FalloffSize", LerpBetween(mat.GetFloat("_FalloffSize"), falloffSize, lerpSpeed));
+                    }
+                }
+
+            }
+
+            Dissapear(renderers);
+        }
+
+        void Dissapear(List<Renderer> renderers)
+        {
+            foreach (Renderer rend in savedRenderers)
+            {
+                if (!(renderers.Contains(rend)))
+                {
+                    foreach (Material mat in rend.materials)
+                    {
+                        mat.SetFloat("_CutoutSize", LerpBetween(mat.GetFloat("_CutoutSize"), 0, lerpSpeed));
+                        mat.SetFloat("_FalloffSize", LerpBetween(mat.GetFloat("_FalloffSize"), 0, lerpSpeed));
+                        if (mat.GetFloat("_CutoutSize") <= 0.0f && mat.GetFloat("_FalloffSize") <= 0.0f)
+                        {
+                            activeMaterials.Remove(mat);
+                            savedRenderers.Remove(rend);
+                        }
                     }
                 }
             }
